@@ -21,12 +21,14 @@ public class PublicationModel{
         private String imageLink;
         private LocalDateTime timePub;
         private String description;
+        User author;
 
         public Publication() {
 
         }
-        public Publication(int idPublic, String imageLink, String timePub, String description) {
+        public Publication(int idPublic, String imageLink, String timePub, String description, User user) {
             this.idPublic= idPublic;
+            this.author=user;
             this.imageLink = imageLink;
             this.timePub = timePub;
             this.description=description;
@@ -70,6 +72,13 @@ public class PublicationModel{
 
         public void setDescription(String description) {
             this.description = description;
+        }
+        public User getAuthor() {
+            return author;
+        }
+
+        public void setAuthor(User author) {
+            this.author = author;
         }
 
     }
